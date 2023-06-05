@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="username_description">Username: M A Sayed Masud</string>
+    <string name="email_description">Email: sayedmasssud1996@gmail.com</string>
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+    <string-array name="division_name">
+
+        <item>Dhaka</item>
+        <item>Rajshahi</item>
+        <item>Chittagong</item>
+        <item>Rangpur</item>
+        <item>Khulna</item>
+        <item>Barisal</item>
+        <item>Sylate</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

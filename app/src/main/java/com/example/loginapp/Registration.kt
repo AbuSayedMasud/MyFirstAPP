@@ -24,6 +24,8 @@ class Registration : AppCompatActivity() {
     private lateinit var resPass: TextInputEditText
     private lateinit var submit: AppCompatButton
     lateinit var divisions: Array<String>
+    private lateinit var userName: TextInputEditText
+    private lateinit var email: TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,8 @@ class Registration : AppCompatActivity() {
         spinner=findViewById(R.id.spinner_id)
         resPass=findViewById(R.id.logIn_Password)
         resAccName=findViewById(R.id.res_acc_name)
+        userName=findViewById(R.id.userName)
+        email=findViewById(R.id.email)
         submit=findViewById(R.id.res_btn)
 
         textInput.setOnClickListener {
@@ -67,10 +71,14 @@ class Registration : AppCompatActivity() {
         submit.setOnClickListener {
             val name:String=resAccName.text.toString()
             val pass:String=resPass.text.toString()
+            val userName:String=userName.text.toString()
+            val userEmail:String=email.text.toString()
             val sharedPreferences: SharedPreferences = getSharedPreferences("userDetails", Context.MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             editor.putString("userIdKey", name)
             editor.putString("passwordKey",pass)
+            editor.putString("userName",userName)
+            editor.putString("email",userEmail)
             editor.apply()
             Toast.makeText(applicationContext, "Data is stored", Toast.LENGTH_SHORT).show()
             val intent = Intent(this@Registration, MainActivity::class.java)

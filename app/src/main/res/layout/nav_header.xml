@@ -1,66 +1,100 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navHeader"
     android:layout_width="match_parent"
-    android:background="#006a4e"
     android:layout_height="match_parent">
 
-    <!-- Circular Image View -->
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/profilepic"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/unnamed"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+    <!-- Divider View -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="50dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/userName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/RoundedImageView" />
+        app:srcCompat="@drawable/p" />
 
-    <!-- Username TextView -->
-    <TextView
-        android:id="@+id/username"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:contentDescription="@string/username_description"
-android:textColor="#ffffff"
-        android:importantForAccessibility="yes"
-        android:text="M A Sayed Masud"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profilepic" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
 
-    <!-- Email TextView -->
+        app:backgroundTint="#006a4e"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:srcCompat="@drawable/baseline_camera_alt_24" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:clickable="true"
+        android:src="@drawable/p"
+        app:civ_border_color="#ffffff"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:scaleType="center"
+        app:backgroundTint="#006a4e"
+        app:fabCustomSize="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/baseline_camera_alt_24" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#006a4e"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sayedmasssud1996@gmail.com"
-        android:layout_below="@id/username"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:layout_marginTop="6dp"
-        android:textSize="16dp"
-        app:layout_constraintTop_toBottomOf="@id/username"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="name"
+        android:textSize="14dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#006a4e"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:importantForAccessibility="yes"
-        android:contentDescription="@string/email_description" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
-    <!-- Divider View -->
     <View
+        android:id="@+id/divider"
+        style="@style/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:importantForAccessibility="no" />
-
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 </androidx.constraintlayout.widget.ConstraintLayout>

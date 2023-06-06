@@ -94,8 +94,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Acount No"
-            android:inputType="number" />
+            android:hint="Name"
+            android:id="@+id/userName"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -171,6 +172,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:id="@+id/email"
             android:inputType="textEmailAddress"
             android:textColorHighlight="#006a4e"
             android:textColorHint="#006a4e"

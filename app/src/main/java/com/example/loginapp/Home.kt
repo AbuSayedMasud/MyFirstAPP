@@ -249,18 +249,18 @@ class Home : AppCompatActivity(),TopBarTitleChangeListener  {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         var uri: Uri? =data?.data
-        when (requestCode) {
-            BACKGROUND_IMAGE_CODE -> {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == BACKGROUND_IMAGE_CODE) {
                 Glide.with(this)
                     .load(uri)
                     .into(imageView)
-            }
-            PROFILE_IMAGE_CODE -> {
+            } else if (requestCode == PROFILE_IMAGE_CODE) {
                 Glide.with(this)
                     .load(uri)
                     .into(profileImage)
             }
         }
+
 
 
     }
